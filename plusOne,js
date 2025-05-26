@@ -1,0 +1,19 @@
+function plusOne(digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    // If current digit is less than 9, just add 1 and return
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    // Otherwise, set current digit to 0 and continue loop
+    digits[i] = 0;
+  }
+
+  // If we are here, all digits were 9, so we need to add 1 at the beginning
+  digits.unshift(1);
+  return digits;
+}
+
+digits = [1,2,3];
+const res = plusOne(digits);
+console.log(res);
